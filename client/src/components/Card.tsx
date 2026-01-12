@@ -2,7 +2,6 @@ import type { Game } from "../types/game"
 import { CONSOLES } from "../constants/consoles"
 
 const Card = ({game}: {game: Game}) => {
-  console.log(game.console)
   return (
     <div key={game.id} className='max-w-md border flex flex-col h-full border-[#4DD7FE] relative'>
       <div className='relative'>
