@@ -4,7 +4,7 @@ import cors from 'cors';
 import { getAllGames, searchGames } from './database.js';
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3001;
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
