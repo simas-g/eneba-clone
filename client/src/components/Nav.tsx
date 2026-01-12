@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png';
-import {  Heart, ShoppingCart, User } from 'lucide-react';
+import { Heart, ShoppingCart, User } from 'lucide-react';
 import language from '../assets/lit.webp';
 import SearchBar from './SearchBar';
 
@@ -28,4 +28,3 @@ const Nav = () => {
 }
 
 export default Nav;
-

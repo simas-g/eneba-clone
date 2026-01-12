@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext } from 'react';
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 type SearchContextType = {
   searchInput: string;
@@ -9,7 +10,7 @@ type SearchContextType = {
   handleClear: () => void;
 };
 
-const SearchContext = createContext<SearchContextType | undefined>(undefined);
+export const SearchContext = createContext<SearchContextType | undefined>(undefined);
 
 export const SearchProvider = ({ children }: { children: ReactNode }) => {
   const [searchInput, setSearchInput] = useState('');
@@ -30,12 +31,3 @@ export const SearchProvider = ({ children }: { children: ReactNode }) => {
     </SearchContext.Provider>
   );
 };
-
-export const useSearch = (): SearchContextType => {
-  const context = useContext(SearchContext);
-  if (context === undefined) {
-    throw new Error('useSearch must be used within a SearchProvider');
-  }
-  return context;
-};
-

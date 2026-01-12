@@ -2,10 +2,10 @@ import './App.css'
 import Nav from './components/Nav';
 import Results from './components/Results';
 import { useQuery } from '@tanstack/react-query';
-import { getGames, searchGames } from './lib/api';
-import { useSearch } from './lib/useSearch.tsx';
+import { getGames, searchGames } from './api/games';
+import { useSearch } from './hooks/useSearch';
 
-function App() {
+const App = () => {
   const { searchQuery } = useSearch();
 
   const { data: games } = useQuery({
