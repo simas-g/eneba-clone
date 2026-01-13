@@ -5,7 +5,7 @@ const Card = ({game}: {game: Game}) => {
   return (
     <div key={game.id} className='max-w-md border flex flex-col h-full border-[#4DD7FE] relative'>
       <div className='relative'>
-        <img src={game.image_url} alt={game.title} className='w-full h-80 object-cover' />
+        <img src={game.image_url} alt={game.title} className='w-full h-100 object-cover' />
         <div className='p-2 bg-black/50 backdrop-blur-sm absolute bottom-0 w-full flex justify-center gap-2'>
           <img src={CONSOLES[game.console]?.icon} alt={CONSOLES[game.console]?.name} className='w-4 h-4' />
           <p className='text-sm font-bold text-white'>{CONSOLES[game.console]?.name}</p>
