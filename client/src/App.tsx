@@ -8,7 +8,7 @@ import { useSearch } from './hooks/useSearch';
 const App = () => {
   const { searchQuery } = useSearch();
 
-  const { data: games } = useQuery({
+  const { data: games, isPending } = useQuery({
     queryKey: ['games', searchQuery],
     queryFn: () => searchQuery ? searchGames(searchQuery) : getGames(),
   });
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Nav />
-      <Results results={games || []} />
+      <Results results={games || []} isLoading={isPending} />
     </>
   )
 }
